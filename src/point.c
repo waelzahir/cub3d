@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   point.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:34:29 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/02/13 18:10:39 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/03/26 21:12:05 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cube3d.h"
+#include "../include/Cube3d.h"
 
 void init_point(t_point *_point, int x, int y)
 {
