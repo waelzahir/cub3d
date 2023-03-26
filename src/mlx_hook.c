@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cube3d.h"
+#include "Cube3d.h"
 
 
 int draw_ray(t_vars *vars);
@@ -30,20 +30,20 @@ int key_handle(int keycode, t_vars *vars)
 	else if (keycode == UP)
 	{
 		double checkx = vars->player.pos_p.x + (vars->player.vec.dx) * 0.12;
-		if (vars->map[(int)checkx][(int)vars->player.pos_p.y] == 0)
+		if (vars->vgame.map[(int)checkx][(int)vars->player.pos_p.y] == 0)
 			vars->player.pos_p.x = checkx;
 		double checky = vars->player.pos_p.y + (vars->player.vec.dy) * 0.12;
-		if (vars->map[(int)vars->player.pos_p.x][(int)checky] == 0)
+		if (vars->vgame.map[(int)vars->player.pos_p.x][(int)checky] == 0)
 			vars->player.pos_p.y = checky;
 		
 	}
 	else if (keycode == DOWN)
 	{
 		double checkx = vars->player.pos_p.x - (vars->player.vec.dx) * 0.12;
-		if (vars->map[(int)checkx][(int)vars->player.pos_p.y] == 0)
+		if (vars->vgame.map[(int)checkx][(int)vars->player.pos_p.y] == 0)
 			vars->player.pos_p.x = checkx;
 		double checky = vars->player.pos_p.y - (vars->player.vec.dy) * 0.12;
-		if (vars->map[(int)vars->player.pos_p.x][(int)checky] == 0)
+		if (vars->vgame.map[(int)vars->player.pos_p.x][(int)checky] == 0)
 			vars->player.pos_p.y = checky;
 		
 	}

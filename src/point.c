@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cube3d.h"
+#include "Cube3d.h"
 
 void init_point(t_point *_point, int x, int y)
 {

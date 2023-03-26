@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cube3d.h"
+#include "Cube3d.h"
 
 void draw_wall(t_vars *vars)
 {
@@ -24,7 +24,7 @@ void draw_wall(t_vars *vars)
 		j = -1;
 		while (++j < 24)
 		{
-			if (vars->map[i][j] >= 1)
+			if (vars->vgame.map[i][j] >= 1)
 			mlx_put_image_to_window(vars->mlx, vars->win, vars->imgs.wall, i* (screenWidth / 24) + screenWidth, j* (screenHeight / 24));
 		}
 	}

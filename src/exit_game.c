@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cube3d.h"
+#include "Cube3d.h"
 
 /**
  * @brief function that take as parametr from mlx_hook

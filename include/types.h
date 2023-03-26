@@ -45,14 +45,21 @@ typedef struct s_pl
 	t_point		pos_p;
 	
 	t_vector	vec;
-	double		planeX;
-	double		planeY;
+	t_point		plane;
 } t_pl;
 
 typedef struct s_img
 {
 	void *wall;
 }t_img;
+
+typedef struct	s_game
+{
+	// temprory (remove after)
+	int			map[mapWidth][mapHeight];
+
+	char		**smap;
+}t_game;
 
 typedef struct s_vars
 {
@@ -63,6 +70,7 @@ typedef struct s_vars
 	
 	t_tframe	times;
 	t_speed		speed;
-	int			map[mapWidth][mapHeight];
+	t_game		vgame;
 } t_vars;
+
 #endif

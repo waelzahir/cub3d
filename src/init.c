@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:15:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/03/26 21:11:58 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/03/08 06:17:57 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cube3d.h"
+#include "Cube3d.h"
 
 
 /**
@@ -30,8 +30,8 @@ static void init_var_game(t_vars *vars)
 	vars->player.pos_p.y = 9;
 	vars->player.vec.dx = 1;
 	vars->player.vec.dy = 0;
-	vars->player.planeX = 0;
-	vars->player.planeY = 0.66;
+	vars->player.plane.x = 0;
+	vars->player.plane.y = 0.66;
 	vars->times.time = 0;
 	vars->times.oldtime = 0;
 }
@@ -85,8 +85,8 @@ int init(t_vars *_vars)
 	_vars->win = mlx_new_window(_vars->mlx, screenWidth, screenHeight, "Test");
 	if (!_vars->mlx)
 		return (perror("init of mlx window faild"), -2);
-	// ouail here
-	memcpy(_vars->map, copy_map, sizeof(copy_map));
+	// ouail here()
+	memcpy(_vars->vgame.map, copy_map, sizeof(copy_map));
 	init_var_game(_vars);
 	return (0);
 }

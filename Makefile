@@ -6,7 +6,7 @@
 #    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/03/26 21:10:59 by ozahir           ###   ########.fr        #
+#    Updated: 2023/03/26 21:06:44 by ozahir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ UHEADERS := $(addprefix include/, $(UHEADERS))
 
 RM = rm -rf
 CC = gcc
-HEADERSFLAGS = 
+HEADERSFLAGS = -I include
 CFLAG =   $(HEADERSFLAGS)
 
 # ################SRCS_Objs##########################
@@ -69,7 +69,7 @@ $(NAME): $(OBJ) $(OBJ_UTILS)
 	@tput el
 	@ printf ${GREEN}"\rMaking is done ✅\n"${NC}
 	@ tput cvvis
-	@$(CC) $(CFLAG)  $(OBJ) -lmlx  -framework OpenGL -framework AppKit -g -o $(NAME)
+	@$(CC) $(CFLAG)  $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -g -o $(NAME)
 
 # library :
 # 	@ make -C libft
@@ -77,7 +77,7 @@ $(NAME): $(OBJ) $(OBJ_UTILS)
 obj/%.o : src/%.c  $(HEADERS) $(UHEADERS)
 	@ mkdir -p obj
 	@ mkdir -p obj/utils
-	@ $(CC) $(CFLAG)  -O3 -g -c $< -o $@
+	@ $(CC) $(CFLAG) -I/usr/include  -O3 -g -c -lm $< -o $@
 	@tput civis
 	$(eval x=$(x)+1)
 	@ printf $(notdir $@)"\n"

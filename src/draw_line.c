@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cube3d.h"
+#include "Cube3d.h"
 
 int rgbcolor(int red, int green, int blue)
 {
@@ -113,8 +113,8 @@ int draw_ray(t_vars *vars)
 		double perpWallDist;
 		// calculate ray position and direction
 		double cameraX = 2 * x / (double)screenWidth - 1; // x-coordinate in camera space
-		double rayDirX = vars->player.vec.dx + vars->player.planeX * cameraX;
-		double rayDirY = vars->player.vec.dy + vars->player.planeY * cameraX;
+		double rayDirX = vars->player.vec.dx + vars->player.plane.x * cameraX;
+		double rayDirY = vars->player.vec.dy + vars->player.plane.y * cameraX;
 		// which box of the map we're in
 		int mapX = (int)(vars->player.pos_p.x);
 		int mapY = (int)(vars->player.pos_p.y);
@@ -175,7 +175,7 @@ int draw_ray(t_vars *vars)
 			// mlx_pixel_put(vars->mlx, vars->win, mapX * 24, mapY*24, 255 << 8 | 255 << 16);
 			// Check if ray has hit a wall
 			// printf("x = %d y = %d\n",mapX , mapY );
-			if (vars->map[mapX][mapY] >= 1)
+			if (vars->vgame.map[mapX][mapY] >= 1)
 			{
 				// mlx_pixel_put(vars->mlx, vars->win, (mapX) * 24, (mapY) * 24, 255 << 16);
 				hit = 1;
@@ -207,7 +207,7 @@ int draw_ray(t_vars *vars)
 			starty = drawStart;
 		}
 		int color = 0;
-			switch (vars->map[mapX][mapY])
+			switch (vars->vgame.map[mapX][mapY])
 			{
 			case 1:
 				color = rgbcolor(143, 0, 1);
