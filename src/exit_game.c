@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   exit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 11:45:02 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/02/15 11:09:59 by tel-mouh         ###   ########.fr       */
+/*   Created: 2023/02/12 13:28:11 by tel-mouh          #+#    #+#             */
+/*   Updated: 2023/02/12 15:59:53 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Cube3d.h"
 
-
-int main()
+/**
+ * @brief function that take as parametr from mlx_hook
+*/
+int	exit_game(t_vars *vars)
 {
-	t_vars vars;
-
-	if (init(&vars))
-		return 1;
-	game_hooks(&vars);
+	(void)vars;
+	exit(0);
 }

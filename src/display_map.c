@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   display_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 11:45:02 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/02/15 11:09:59 by tel-mouh         ###   ########.fr       */
+/*   Created: 2023/02/12 18:16:23 by tel-mouh          #+#    #+#             */
+/*   Updated: 2023/03/07 06:10:26 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Cube3d.h"
 
-
-int main()
+void draw_wall(t_vars *vars)
 {
-	t_vars vars;
+	int i;
+	int j;
 
-	if (init(&vars))
-		return 1;
-	game_hooks(&vars);
+	i = -1;
+	(void)vars;
+	while (++i < 24)
+	{
+		j = -1;
+		while (++j < 24)
+		{
+			if (vars->map[i][j] >= 1)
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->imgs.wall, i* (screenWidth / 24) + screenWidth, j* (screenHeight / 24));
+		}
+	}
+	
 }
