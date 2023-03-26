@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 15:57:15 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/03/08 06:26:24 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/03/26 21:12:32 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cube3d.h"
+#include "../include/Cube3d.h"
 
 
 int draw_ray(t_vars *vars);
@@ -19,6 +19,7 @@ int draw_ray(t_vars *vars);
 # define LEFT 65361
 # define DOWN 65364
 # define UP 65362
+
 int key_handle(int keycode, t_vars *vars)
 {
 	mlx_clear_window(vars->mlx, vars->win);
