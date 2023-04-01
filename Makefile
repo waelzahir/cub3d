@@ -6,7 +6,7 @@
 #    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/03/26 21:06:44 by ozahir           ###   ########.fr        #
+#    Updated: 2023/04/01 02:40:19 by ozahir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ CFLAG =   $(HEADERSFLAGS)
 # ################SRCS_Objs##########################
 
 SRC = main.c init.c print_functions.c exit_game.c mlx_hook.c point.c draw_line.c vectors.c\
-	display_map.c
+	display_map.c parser.c parser_check_parsed_map.c parser_error_free_data.c parser_get_textures.c parser_helpers.c parser_parse_colors.c parser_parse_config.c parser_parse_map.c parser_parse_player_data.c
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 # ################SRCS_Objs_Utils####################
@@ -69,7 +69,7 @@ $(NAME): $(OBJ) $(OBJ_UTILS)
 	@tput el
 	@ printf ${GREEN}"\rMaking is done ✅\n"${NC}
 	@ tput cvvis
-	@$(CC) $(CFLAG)  $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -g -o $(NAME)
+	@$(CC) $(CFLAG)  $(OBJ) libft.a gnl.a -lmlx  -framework OpenGL -framework AppKit -g -o $(NAME)
 
 # library :
 # 	@ make -C libft

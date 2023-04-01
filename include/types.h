@@ -53,12 +53,32 @@ typedef struct s_img
 	void *wall;
 }t_img;
 
+typedef struct	s_data {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		height;
+	int		width;
+}	t_data;
 typedef struct	s_game
 {
 	// temprory (remove after)
 	int			map[mapWidth][mapHeight];
 
 	char		**smap;
+	//colors: index 0 ceiling color , index 1 floor color
+	int	color[2];
+
+	/*
+		textures indeixng:
+			0: north
+			1: south
+			2: east:
+			3: west
+	*/
+	t_data	textures[4];
 }t_game;
 
 typedef struct s_vars
@@ -72,5 +92,6 @@ typedef struct s_vars
 	t_speed		speed;
 	t_game		vgame;
 } t_vars;
+
 
 #endif

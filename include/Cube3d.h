@@ -8,13 +8,15 @@
 # include <string.h>
 # include "types.h"
 # include <math.h>
+# include "parser.h"
+
 # define PI 3.141592654
 
 
 
 
 // function
-int init(t_vars *_vars);
+int init(t_vars *_vars, char *file);
 
 // utils
 void	print_map_on_terminal(int map[mapWidth][mapHeight]);

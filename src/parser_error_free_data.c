@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parser_error_free_data.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 11:45:02 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/01 01:49:11 by ozahir           ###   ########.fr       */
+/*   Created: 2023/04/01 01:21:43 by ozahir            #+#    #+#             */
+/*   Updated: 2023/04/01 01:22:00 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Cube3d.h"
 
-
-int main(int ac, char	**av)
+void	destroy2d_configs(char **ptr)
 {
-	t_vars vars;
+	int	i;
 
-	if (ac != 2)
-		return (1);
-	if (init(&vars, av[1]))
-		return 1;
-	game_hooks(&vars);
+	i = -1;
+	while (++i < 6)
+		free(ptr[i]);
+	free(ptr);
 }
+
+void	free_2d(char **ptr)
+{
+	int	i;
+
+	i = 0;
+	while (ptr[i])
+	{
+		free(ptr[i]);
+		i++;
+	}
+	free(ptr);
+}
+
