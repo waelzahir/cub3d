@@ -1,6 +1,6 @@
 ---------------------------------------------------
-src/mlx_hook.c
----------------------------------------------------
+src/draw/init_img.c
+src/draw/img_to_widow.c
 src/draw/line_to_img.c
 src/calcul/calcul_game.c
 src/calcul/start_end.c

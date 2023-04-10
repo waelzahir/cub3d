@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 10:42:16 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/10 06:35:09 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:48:34 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void draw_wall(t_vars *vars)
 		j = -1;
 		while (++j < vars->vgame.map_width)
 		{
-			if (vars->vgame.smap[i][j] != '0')
+			if (vars->vgame.smap[i][j] == '1')
 			    mlx_put_image_to_window(vars->mlx, vars->win, vars->imgs.wall, j * 24 , i * 24);
                 // printf("hello\n");
 		}

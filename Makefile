@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/10 17:42:22 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/10 17:51:30 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SHELL := /bin/bash # Use bash syntax
 
 OS = $(shell uname -s)
 ifeq ($(OS),Linux)
-	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -fsanitize=address
+	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz 
 	IFLAGS= -I/usr/include  -O3 -g  -lm
 else
 	LFLAGS=-lmlx -framework OpenGL -framework AppKit

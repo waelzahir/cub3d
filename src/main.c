@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:45:02 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/07 07:14:50 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:50:43 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,5 @@ int main(int ac, char	**av)
 		return (1);
 	if (init(&vars, av[1]))
 		return 1;
-	
 	game_hooks(&vars);
 }
