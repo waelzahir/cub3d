@@ -1,3 +1,5 @@
 Makefile
 libft.a
 gnl.a
+.vscode
+.DS_Store
