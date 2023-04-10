@@ -64,13 +64,40 @@ typedef struct	s_data {
 }	t_data;
 typedef struct	s_game
 {
-	// temprory (remove after)
-	int			map[mapWidth][mapHeight];
-
 	char		**smap;
-	//colors: index 0 ceiling color , index 1 floor color
-	int	color[2];
 
+	double		cameraX;
+	double		rayDirX;
+	double		rayDirY;
+
+
+	double		sideDistX;
+	double		sideDistY;
+	
+	double		deltaDistX;
+	double		deltaDistY;
+	double		perpWallDist;
+	int			lineHeight;
+
+	int			mapX;
+	int			mapY;
+
+	int			map_hight;
+	int			map_width;
+
+	int			draw_start;
+	int			draw_end;
+
+	int			stepX;
+    int			stepY;
+
+	int			hit;
+	int			side;
+	//colors: index 0 ceiling color , index 1 floor color
+	int			color[2];
+	
+
+	t_data		img;
 	/*
 		textures indeixng:
 			0: north
@@ -78,7 +105,7 @@ typedef struct	s_game
 			2: east:
 			3: west
 	*/
-	t_data	textures[4];
+	t_data		textures[4];
 }t_game;
 
 typedef struct s_vars

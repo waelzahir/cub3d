@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:15:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/01 02:34:04 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/03 11:38:06 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ int init(t_vars *_vars, char	*file)
 	_vars->win = mlx_new_window(_vars->mlx, screenWidth, screenHeight, "Test");
 	if (!_vars->mlx)
 		return (perror("init of mlx window faild"), -2);
+	
 	if (parser(file, _vars))
 		return (-3);
+	
 	init_var_game(_vars);
 	return (0);
 }

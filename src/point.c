@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   point.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:34:29 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/03/26 21:12:05 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/07 23:13:45 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,15 @@ void point_set_x(t_point *_point, int x)
 void point_set_y(t_point *_point, int y)
 {
 	_point->y = y;
+}
+
+t_point new_point_s(int x, int y)
+{
+	t_point	p;
+
+	p.x = x;
+	p.y = y;
+	return p;
 }
 
 t_point *new_point(int x, int y)

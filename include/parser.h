@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 01:23:09 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/01 02:38:42 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/06 05:26:38 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 #include "types.h"
 #include <stdio.h>
 #include <fcntl.h>
-#include "get_next_line.h"
-#include "libft.h"
+// libft and gnl
+# include "../libft/include/libft.h"
+# include "get_next_line.h"
 
 
 int	parser(char *file, t_vars *_v);
@@ -50,10 +51,11 @@ void	get_xpm_adresss(t_data *img);
 void	textures_panic(int index, t_vars *_v, char	*tex);
 void	free_2d(char **ptr);
 void	destroy2d_configs(char **ptr);
-char	**parse_check_is_map_valid(char **oldmap);
-char	**duplicate_map(char **map);
+char	**parse_check_is_map_valid(char **oldmap, t_vars *_va);
+char	**duplicate_map(char **map, t_vars *_va);
 int	get_map_sizes(char **map, int *x);
 int	check_if_map_closed(char **map);
 int	check_axis(char **map, int x, int y);
+char **reverse_map(char **map);
 
 #endif

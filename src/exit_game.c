@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:28:11 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/03/26 21:11:52 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/08 00:03:28 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 int	exit_game(t_vars *vars)
 {
 	(void)vars;
+	ft_putendl_fd("exit game", 2);
 	exit(0);
 }
