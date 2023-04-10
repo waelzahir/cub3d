@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line_to_img.c                                      :+:      :+:    :+:   */
+/*   init_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 15:54:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/10 17:41:14 by tel-mouh         ###   ########.fr       */
+/*   Created: 2023/04/10 17:40:30 by tel-mouh          #+#    #+#             */
+/*   Updated: 2023/04/10 17:40:59 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cube3d.h"
 
-void	draw_line_to_img(t_game *game, int x_screen)
+int	init_image_to_draw(t_vars *vars)
 {
-	int	i;
-	int	pos;
-	t_data	*data; 
+	t_game	*game;
+	t_data	*data;
 
-	i = game->draw_start;
+	game = &vars->vgame;
 	data = &game->img;
-	while (i < game->draw_end)
-	{
-		pos = (i * data->line_length) + (x_screen * (data->bits_per_pixel / 8));
-		data->addr[pos] = 112; 
-		data->addr[pos + 1] = 23;
-		data->addr[pos + 2] = 122;
-		i++;
-	}
+	data->img = mlx_new_image(vars->mlx, screenWidth, screenHeight);
+	if (!data->img)
+		return (-1);
+	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
+		&data->line_length, &data->endian);
+	if (!data->addr)
+		return (-2);
+	return 0;
 }

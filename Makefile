@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/10 17:09:03 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/10 17:42:22 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ SRC_CALCUL = 	dda.c	perpWallDist_hight.c	raydir.c	step_sides.c\
 OBJ_CALCUL = $(addprefix obj/calcul/, $(SRC_CALCUL:.c=.o))
 # ################SRCS_Draw####################
 
-SRC_DRAW = 	line_to_img.c
+SRC_DRAW = 	line_to_img.c img_to_widow.c  init_img.c
 OBJ_DRAW = $(addprefix obj/draw/, $(SRC_DRAW:.c=.o))
 
 # ################OBJSALL############################
