@@ -20,8 +20,10 @@ ifeq ($(OS),Linux)
 	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz 
 	IFLAGS= -I/usr/include  -O3 -g  -lm
 	NEW_FILE = /tmp/newfile
+	EMOJI = "⬛"
 else
 	NEW_FILE = ~/goinfre/newfile
+	EMOJI = "⬛"
 	LFLAGS=-lmlx -framework OpenGL -framework AppKit
 endif
 
@@ -122,7 +124,6 @@ x  = 0
 all : $(NAME)
 
 
-
 $(NAME):  $(OBJ_ALLS) 
 	@ printf "\033[$(lines);0f"
 	@ tput el
@@ -156,7 +157,7 @@ obj/%.o : src/%.c  $(HEADERS)  | library
 	@ printf "\033[$(lines);0f"
 	@ echo $< | cat -  $(LOG_FILE) > $(NEW_FILE) && mv $(NEW_FILE)  $(LOG_FILE)
 	@number=`echo "$(x) * $(cols) / $(num)" | bc | tr -d '\n'` ; while [[ $$number -ne 1 ]] ; do \
-		if [[ $$(( $$number % 2 )) -eq 0 ]]; then printf ${YELLOW}"🟩"${NC} ; fi ;\
+		if [[ $$(( $$number % 2 )) -eq 0 ]]; then printf ${YELLOW}"${EMOJI}"${NC} ; fi ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""

@@ -18,6 +18,11 @@ HEADERS := $(addprefix include/, $(HEADERS))
 
 # ################COMMANDS###########################
 
+ifeq ($(OS),Linux)
+	EMOJI = " ⏹"
+else
+	EMOJI = " ⏹"
+endif
 RM = rm -rf
 CC = gcc
 AR = ar rcs
@@ -97,7 +102,7 @@ obj/%.o : src/%.c $(HEADERS)
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
 	@number=$x ; while [[ $$number -ge 0 ]] ; do \
-		if [[ $$(( $$number % 2 )) -eq 0 ]]; then printf ${YELLOW}"🟪"${NC} ; fi ;\
+		if [[ $$(( $$number % 2 )) -eq 0 ]]; then printf ${YELLOW}${EMOJI}${NC} ; fi ;\
         ((number = number - 1)) ; \
     done
 	@printf  ${CODE_RESTORE_CURSOR}""
