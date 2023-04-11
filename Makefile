@@ -19,7 +19,9 @@ OS = $(shell uname -s)
 ifeq ($(OS),Linux)
 	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz 
 	IFLAGS= -I/usr/include  -O3 -g  -lm
+	NEW_FILE = /tmp/newfile
 else
+	NEW_FILE = ~/goinfre/newfile
 	LFLAGS=-lmlx -framework OpenGL -framework AppKit
 endif
 
@@ -129,7 +131,7 @@ $(NAME):  $(OBJ_ALLS)
 	@ printf ${GREEN}"\rMaking is done ✅\n"${NC}
 	@$(CC) $(CFLAG)  $(OBJ_ALLS) $(ILIBFT) $(LIBFT)  $(LFLAGS) -g -o $(NAME)
 	@ tput cvvis
-	@ echo "---------------------------------------------------" | cat -  $(LOG_FILE) > /tmp/newfile && mv /tmp/newfile  $(LOG_FILE)
+	@ echo "---------------------------------------------------" | cat -  $(LOG_FILE) > $(NEW_FILE) && mv $(NEW_FILE)  $(LOG_FILE)
 
 library :
 	@ make -C libft
@@ -141,18 +143,18 @@ obj/%.o : src/%.c  $(HEADERS)  | library
 	@$ nu=$x ; if [[ $$nu -eq -1 ]] ; then \
 	printf ${RE}"🔷 Making the--> "${NC} \
 	 ; fi
-	if  $(CC) $(CFLAG)  $(IFLAGS)   -c $< -o $@; then \
+	@if  $(CC) $(CFLAG)  $(IFLAGS)   -c $< -o $@; then \
 		echo -n; \
-	else \
-		tput cvvis; \
-		exit 1; \
-	fi
+		else \
+			tput cvvis; \
+			exit 1; \
+		fi
 	@tput civis
 	$(eval x = $(shell echo "$(x) + 1" | bc ))
 	@ printf $(notdir $@)"\n"
 	@ printf  ${CODE_SAVE_CURSOR}""
 	@ printf "\033[$(lines);0f"
-	@ echo $< | cat -  $(LOG_FILE) > /tmp/newfile && mv /tmp/newfile  $(LOG_FILE)
+	@ echo $< | cat -  $(LOG_FILE) > $(NEW_FILE) && mv $(NEW_FILE)  $(LOG_FILE)
 	@number=`echo "$(x) * $(cols) / $(num)" | bc | tr -d '\n'` ; while [[ $$number -ne 1 ]] ; do \
 		if [[ $$(( $$number % 2 )) -eq 0 ]]; then printf ${YELLOW}"🟩"${NC} ; fi ;\
         ((number = number - 1)) ; \

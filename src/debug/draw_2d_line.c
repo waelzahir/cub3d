@@ -155,7 +155,7 @@ void	print_game_infos(t_game *game, t_pl *player, int x_screen, int max_x)
 	{
 		if (max_x == x_screen)
 			printf("\n==========Max========= \n");
-		else if ((x_screen == (max_x / 2)))
+		else if (x_screen == (max_x / 2))
 			printf("\n========Middle======== \n");
 		else
 			printf("\n=========start======== \n");
