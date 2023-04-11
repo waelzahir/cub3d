@@ -18,14 +18,18 @@
 # define LEFT 65361
 # define DOWN 65364
 # define UP 65362
+# define RIGHT_MACOS 124
+# define LEFT_MACOS 123
+# define DOWN_MACOS 125
+# define UP_MACOS 126
 
 int key_handle(int keycode, t_vars *vars)
 {
-	if (keycode == RIGHT)
+	if (keycode == RIGHT || keycode == RIGHT_MACOS)
 		rotate_vector(vars, &vars->player.vec, -1);
-	else if (keycode == LEFT)
+	else if (keycode == LEFT || keycode == LEFT_MACOS)
 		rotate_vector(vars, &vars->player.vec, 1);
-	else if (keycode == UP)
+	else if (keycode == UP || keycode == UP_MACOS )
 	{
 		double checkx = vars->player.pos_p.x + (vars->player.vec.dx) * 0.12;
 		if (vars->vgame.smap[(int)vars->player.pos_p.y][(int)checkx] == '0')
@@ -34,7 +38,7 @@ int key_handle(int keycode, t_vars *vars)
 		if (vars->vgame.smap[(int)checky][(int)vars->player.pos_p.x] == '0')
 			vars->player.pos_p.y = checky;
 	}
-	else if (keycode == DOWN)
+	else if (keycode == DOWN || keycode == DOWN_MACOS)
 	{
 		double checkx = vars->player.pos_p.x - (vars->player.vec.dx) * 0.12;
 		if (vars->vgame.smap[(int)vars->player.pos_p.y][(int)checkx] == '0')
