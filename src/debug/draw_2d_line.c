@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 10:42:16 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/10 17:48:34 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/11 07:58:49 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int is_valid(int x, int y)
 /// @brief 
 /// @param vec 
 /// @param vars 
-void dda_line_drawing(t_vector *vec, t_vars *vars)
+void dda_line_drawing(t_vector *vec, t_vars *vars, int x0, int y0)
 {
     (void)vars, (void)vec;
 	double steps;
@@ -50,13 +50,13 @@ void dda_line_drawing(t_vector *vec, t_vars *vars)
 	steps = get_steps(vec->dx, vec->dy);
 	if (steps == 0)
 		steps = 1;
-	// ix = (vec->dx * 24) / steps;
+	// ix = (vec->dx * 25) / steps;
 	// iy = (vec->dy * 24) / steps;
 	ix = (vec->dx / steps);
 	iy = (vec->dy / steps);
 
-	x = vars->player.pos_p.x * 24;
-	y = vars->player.pos_p.y * 24;
+	x = (x0 * 24) + 12;
+	y = (y0 * 24) + 12;
     int i = -1;
 	while (is_valid(round(x), round(y)) && ++i < 30)
 	{
@@ -70,24 +70,83 @@ void dda_line_drawing(t_vector *vec, t_vars *vars)
     // draw_scale_point(vars, new_point_s(x, y), 255 << 8 | 255);
 }
 
+int is_valid2(int x , int y, t_vars *vars)
+{
+	if  (x >= vars->vgame.map_width|| y >= vars->vgame.map_hight)
+		return 0;
+	if  (x < 0 || y < 0)
+		return 0;
+	return 1;
+}
 void draw_wall(t_vars *vars)
 {
 	int i;
 	int j;
 
-	i = -1;
-	(void)vars;
-	while (++i < vars->vgame.map_hight)
+	
+	i = 0;
+	while (i < 216)
 	{
-		j = -1;
-		while (++j < vars->vgame.map_width)
+		j = 0;
+		while (j < 216 && (i == 0 || i == 215))
 		{
-			if (vars->vgame.smap[i][j] == '1')
-			    mlx_put_image_to_window(vars->mlx, vars->win, vars->imgs.wall, j * 24 , i * 24);
-                // printf("hello\n");
+			draw_scale_point(vars, new_point_s(j,i), 255 << 16| 255<< 8);
+			j++;
 		}
+		if ((i != 0 && i != 215))
+			draw_scale_point(vars, new_point_s(0,i), 255 | 255 << 16| 255<< 8);
+		if ((i != 0 && i != 215))
+			draw_scale_point(vars, new_point_s(215,i), 255 | 255 << 16| 255<< 8);
+		i++;
 	}
-    dda_line_drawing(&vars->player.vec, vars);	
+	int x;
+	int y;
+
+	
+	i = 1;
+	x = vars->player.pos_p.x;
+	y = vars->player.pos_p.y;
+	while (i < 5)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if (is_valid2(x + j, y + i, vars) && vars->vgame.smap[y + i][x + j] == '1')
+				mlx_put_image_to_window(vars->mlx,vars->win, vars->imgs.wall, (4 + j) * 24, (4 + i) * 24);
+			if (is_valid2(x + j, y - i, vars) && vars->vgame.smap[y - i][x + j] == '1')
+				mlx_put_image_to_window(vars->mlx,vars->win, vars->imgs.wall, (4 + j) * 24, (4 - i) * 24);
+			if (is_valid2(x - j, y + i, vars) && vars->vgame.smap[y + i][x - j] == '1')
+				mlx_put_image_to_window(vars->mlx,vars->win, vars->imgs.wall, (4 - j) * 24, (4 + i) * 24);
+			if (is_valid2(x - j, y - i, vars) && vars->vgame.smap[y - i][x - j] == '1')
+				mlx_put_image_to_window(vars->mlx,vars->win, vars->imgs.wall, (4 - j) * 24, (4 - i) * 24);
+			if (is_valid2(x , y - i, vars) && vars->vgame.smap[y - i][x] == '1')
+				mlx_put_image_to_window(vars->mlx,vars->win, vars->imgs.wall, (4 ) * 24, (4 - i) * 24);
+			if (is_valid2(x , y + i, vars) && vars->vgame.smap[y + i][x] == '1')
+				mlx_put_image_to_window(vars->mlx,vars->win, vars->imgs.wall, (4 ) * 24, (4 + i) * 24);
+			if (is_valid2(x - j, y, vars) && vars->vgame.smap[y][x - j] == '1')
+				mlx_put_image_to_window(vars->mlx,vars->win, vars->imgs.wall, (4 - j) * 24, (4) * 24);
+			if (is_valid2(x + j, y, vars) && vars->vgame.smap[y][x + j] == '1')
+				mlx_put_image_to_window(vars->mlx,vars->win, vars->imgs.wall, (4 + j ) * 24, (4) * 24);
+			j++;
+		}
+		i++;
+	}
+	draw_scale_point(vars, new_point_s((4 * 24) + 12,(4 * 24) + 12), 255 | 255 << 16| 255<< 8);
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	// draw_scale_point(vars, new_point_s(4, 4), 255 << 16| 255);
+    dda_line_drawing(&vars->player.vec, vars, 4, 4);	
 }
 
 void	print_game_infos(t_game *game, t_pl *player, int x_screen, int max_x)
@@ -129,8 +188,6 @@ void draw_scale_point(t_vars *vars, t_point _point, int color)
 {
     t_point point = _point;
 
-    _point.x *= 24;			
-    _point.y *= 24;
 	mlx_pixel_put(vars->mlx, vars->win, point.x , point.y, color);
 	mlx_pixel_put(vars->mlx, vars->win, point.x , point.y - 1, color);
 	mlx_pixel_put(vars->mlx, vars->win, point.x + 1 , point.y - 1, color);

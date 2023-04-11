@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 15:57:15 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/10 17:34:59 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:58:55 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ int key_handle(int keycode, t_vars *vars)
 	mlx_clear_window(vars->mlx, vars->win);
 	game_loop(vars);
 	return 0;
-	// // draw_wall(vars);
-	// (void)vars;
-	
 }
 void game_hooks(t_vars *vars)
 {
