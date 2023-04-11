@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/10 17:51:30 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/11 09:07:59 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ ifeq ($(OS),Linux)
 	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz 
 	IFLAGS= -I/usr/include  -O3 -g  -lm
 	NEW_FILE = /tmp/newfile
-	EMOJI = "⬛"
+	EMOJI = "🟩"
 else
 	NEW_FILE = ~/goinfre/newfile
 	EMOJI = "⬛"

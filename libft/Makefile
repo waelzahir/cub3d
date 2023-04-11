@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/10/18 13:11:57 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/11 09:09:00 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ HEADERS = libft.h
 HEADERS := $(addprefix include/, $(HEADERS))
 
 # ################COMMANDS###########################
-
+OS = $(shell uname -s)
 ifeq ($(OS),Linux)
-	EMOJI = " ⏹"
+	EMOJI = "🟪"
 else
 	EMOJI = " ⏹"
 endif
