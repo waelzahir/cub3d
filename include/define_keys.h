@@ -12,6 +12,8 @@
 #  define D 100
 #  define A 97
 #  define ESC 65307
+#  define ON_KEYDOWN_MASK  (1L<<0)
+#  define ON_KEYUP_MASK  (1L<<1)
 
 #endif
 
@@ -25,6 +27,8 @@
 #  define S 1
 #  define D 2
 #  define A 0
+#  define ON_KEYDOWN_MASK  0
+#  define ON_KEYUP_MASK  0
 
 #endif
 
@@ -39,10 +43,6 @@ typedef	enum s_keys
 	ON_EXPOSE = 12,
 	ON_DESTROY = 17
 } t_keys;
-typedef	enum s_mask
-{
-	ON_KEYDOWN_MASK = (1L<<0),
-	ON_KEYUP_MASK = (1L<<1),
-} t_mask;
+
 
 #endif
