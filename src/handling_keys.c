@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handling_keys.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 03:26:33 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/12 07:21:48 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/12 08:52:51 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	press_key(int keycode, t_vars *var)
 			var->press.hor = keycode;
 	if (var->press.rot == -1 && (keycode == LEFT || keycode == RIGHT))
 			var->press.rot = keycode;
-
+	if (keycode == ESC)
+		exit_game(var);
 	return (0);
 }
 

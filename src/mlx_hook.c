@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 15:57:15 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/12 07:25:42 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/12 08:32:12 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int key_handle(int keycode, t_vars *vars)
 {
+
 	if (keycode == RIGHT )
 		rotate_vector(vars, &vars->player.vec, -1);
 	else if (keycode == LEFT)
@@ -45,9 +46,10 @@ int key_handle(int keycode, t_vars *vars)
 void game_hooks(t_vars *vars)
 {
 	//  mlx_hook(vars->win, 2, 1L << 0, key_handle, vars);
-	mlx_hook(vars->win, ON_KEYDOWN, 0, press_key, vars);
-	mlx_hook(vars->win, ON_KEYUP, 0, release_key,  vars);
-	mlx_hook(vars->win, 17, 0, exit_game, vars);
+	game_loop(vars);
+	mlx_hook(vars->win, ON_KEYDOWN, ON_KEYDOWN_MASK, press_key, vars);
+	mlx_hook(vars->win, ON_KEYUP, ON_KEYUP_MASK, release_key,  vars);
+	mlx_hook(vars->win, ON_DESTROY, 0, exit_game, vars);
 	mlx_loop_hook(vars->mlx,  render, vars);
 		// game_loop(vars);
 	

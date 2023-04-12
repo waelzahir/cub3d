@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
+#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/12 07:05:44 by ozahir           ###   ########.fr        #
+#    Updated: 2023/04/12 08:14:34 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SHELL := /bin/bash # Use bash syntax
 
 OS = $(shell uname -s)
 ifeq ($(OS),Linux)
-	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz  MACOS=0
+	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz 
 	IFLAGS= -I/usr/include  -O3 -g  -lm
 	NEW_FILE = /tmp/newfile
 	EMOJI = "🟩"
