@@ -108,6 +108,14 @@ typedef struct	s_game
 	t_data		textures[4];
 }t_game;
 
+typedef	struct s_pressed
+{
+	int	hor;
+	int	ver;
+	int	rot;
+	int	iter;
+} t_pressed;
+
 typedef struct s_vars
 {
 	void		*mlx;
@@ -118,6 +126,7 @@ typedef struct s_vars
 	t_tframe	times;
 	t_speed		speed;
 	t_game		vgame;
+	t_pressed	press;
 } t_vars;
 
 

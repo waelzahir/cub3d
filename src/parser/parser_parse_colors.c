@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 00:26:35 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/01 00:28:24 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/12 03:32:06 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	inside_get_color_from_str(char *color)
 	col[3] = 0;
 	return (free_2d(rgb), *(int *)col);
 }
-
+ 
 int	rgb_allowed_sintax(char c)
 {
 	char	*ex;

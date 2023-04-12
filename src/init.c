@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:15:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/03 11:38:06 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/12 07:33:50 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 */
 static void init_var_game(t_vars *vars)
 {
-	vars->player.vec.angle = (PI / 23);
+	vars->player.vec.angle = (PI / 50);
 	vars->player.vec.cangle = -1 * vars->player.vec.angle;
 	vars->player.vec.prec.ang_cos = cos(vars->player.vec.angle);
 	vars->player.vec.prec.ang_sin = sin(vars->player.vec.angle);
@@ -28,6 +28,11 @@ static void init_var_game(t_vars *vars)
 	vars->player.vec.cprec.ang_sin = sin(vars->player.vec.cangle);
 	vars->times.time = 0;
 	vars->times.oldtime = 0;
+	vars->press.hor = -1;
+	vars->press.ver = -1;
+	vars->press.rot = -1;
+
+
 }
 
 void init_img(t_vars *vars)

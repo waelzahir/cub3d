@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_parse_map.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 00:23:49 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/06 02:10:10 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/12 04:35:35 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	is_map_line_empty(char *line)
 
 void	get_player_data(t_pl *player, char *c, int y, int x)
 {
-	player->pos_p.x = x;
-	player->pos_p.y = y;
+	player->pos_p.x = x + 0.5;
+	player->pos_p.y = y + 0.5;
 	set_dir_vec(&player->vec, *c);
 	set_plane_vec(&player->plane, *c);
 	*c = '0';

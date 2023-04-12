@@ -12,6 +12,7 @@
 # include "parser.h"
 # include "calcul.h"
 # include "draw.h"
+# include "define_keys.h"
 
 # define PI 3.141592654
 
@@ -53,5 +54,13 @@ int	exit_game(t_vars *vars);
 
 // utils 
 double ft_dabs(double num);
+
+// feat test: keys
+int	press_key(int keycode, t_vars *var);
+int	release_key(int keycode, t_vars *var);
+void	move_horizontal(t_vars	*vars);
+void	move_vertical(t_vars	*vars);
+void	move_rotation(t_vars	*vars);
+int	render(t_vars	*vars);
 
 #endif

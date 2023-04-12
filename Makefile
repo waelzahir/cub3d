@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/11 09:07:59 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/12 07:05:44 by ozahir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,19 +17,19 @@ SHELL := /bin/bash # Use bash syntax
 
 OS = $(shell uname -s)
 ifeq ($(OS),Linux)
-	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz 
+	LFLAGS= -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz  MACOS=0
 	IFLAGS= -I/usr/include  -O3 -g  -lm
 	NEW_FILE = /tmp/newfile
 	EMOJI = "🟩"
 else
 	NEW_FILE = ~/goinfre/newfile
 	EMOJI = "⬛"
-	LFLAGS=-lmlx -framework OpenGL -framework AppKit
+	LFLAGS=-lmlx -framework OpenGL -framework AppKit -D MACOS=1
 endif
 
 
 # #################HEADERS###########################
-HEADERS = Cube3d.h  get_next_line.h  parser.h  types.h
+HEADERS = Cube3d.h  get_next_line.h  parser.h  types.h define_keys.h
 HEADERS := $(addprefix include/, $(HEADERS))
 # #################HEADERS_utils###########################
 UHEADERS = 
@@ -50,7 +50,7 @@ LOG_FILE = lastcompiled.log
 
 SRC = 			vectors.c      init.c      point.c\
 				mlx_hook.c     main.c      print_functions.c\
-				exit_game.c    game_loop.c
+				exit_game.c    game_loop.c handling_keys.c
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 # ################SRCS_Objs_Utils####################
