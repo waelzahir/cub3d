@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
+#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/13 02:00:09 by ozahir           ###   ########.fr        #
+#    Updated: 2023/04/13 06:00:26 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ ifeq ($(OS),Linux)
 else
 	NEW_FILE = ~/goinfre/newfile
 	EMOJI = "⬛"
-	LFLAGS=-lmlx -framework OpenGL -framework AppKit -D MACOS=1
+	LFLAGS=-lmlx -framework OpenGL -framework AppKit 
+	IFLAGS= -D MACOS=1
 endif
 
 
