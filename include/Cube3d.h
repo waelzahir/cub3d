@@ -62,5 +62,6 @@ void	move_horizontal(t_vars	*vars);
 void	move_vertical(t_vars	*vars);
 void	move_rotation(t_vars	*vars);
 int	render(t_vars	*vars);
+int     move_mouse(int x, int y , t_vars *vars);
 
 #endif

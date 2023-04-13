@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/12 08:14:34 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/13 02:00:09 by ozahir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ LOG_FILE = lastcompiled.log
 
 SRC = 			vectors.c      init.c      point.c\
 				mlx_hook.c     main.c      print_functions.c\
-				exit_game.c    game_loop.c handling_keys.c
+				exit_game.c    game_loop.c handling_keys.c\
+				mouse_logic_for_bonus.c
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 # ################SRCS_Objs_Utils####################

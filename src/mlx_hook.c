@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 15:57:15 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/12 08:32:12 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:58:46 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void game_hooks(t_vars *vars)
 	game_loop(vars);
 	mlx_hook(vars->win, ON_KEYDOWN, ON_KEYDOWN_MASK, press_key, vars);
 	mlx_hook(vars->win, ON_KEYUP, ON_KEYUP_MASK, release_key,  vars);
+	mlx_hook(vars->win, ON_MOUSEMOVE, ON_KEYUP_MASK, move_mouse,  vars);
 	mlx_hook(vars->win, ON_DESTROY, 0, exit_game, vars);
 	mlx_loop_hook(vars->mlx,  render, vars);
 		// game_loop(vars);
