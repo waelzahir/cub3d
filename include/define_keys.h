@@ -27,6 +27,7 @@
 #  define S 1
 #  define D 2
 #  define A 0
+#  define ESC 53
 #  define ON_KEYDOWN_MASK  0
 #  define ON_KEYUP_MASK  0
 
