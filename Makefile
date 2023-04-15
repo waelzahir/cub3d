@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/13 06:00:26 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/15 05:47:07 by ozahir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,8 @@ OBJ_DEBUG = $(addprefix obj/debug/, $(SRC_DEBUG:.c=.o))
 # ################SRCS_Calcul####################
 
 SRC_CALCUL = 	dda.c	perpWallDist_hight.c	raydir.c	step_sides.c\
-				delta.c	player.c				start_end.c calcul_game.c
+				delta.c	player.c				start_end.c calcul_game.c\
+				get_ray_polarity.c
 OBJ_CALCUL = $(addprefix obj/calcul/, $(SRC_CALCUL:.c=.o))
 # ################SRCS_Draw####################
 

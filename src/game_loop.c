@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:39:03 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/13 05:56:12 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/15 05:53:03 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	game_loop(t_vars *vars)
 	while (++x_screen < screenWidth)
 	{
 		calcul_game(game, player, x_screen);
-		draw_line_to_img(game, x_screen);
 		colorize_floor_and_ceiling(game, x_screen);
+		draw_line_to_img(game, x_screen);
 		// print_game_infos(game, player, x_screen, 3);
 	}
 	draw_img_to_window(vars);
