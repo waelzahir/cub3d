@@ -44,6 +44,6 @@ typedef	enum s_keys
 	ON_EXPOSE = 12,
 	ON_DESTROY = 17
 } t_keys;
-
+#define	radius 10
 
 #endif

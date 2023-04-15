@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_2d_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 10:42:16 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/12 08:56:31 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/15 01:45:30 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void dda_line_drawing(t_vector *vec, t_vars *vars, int x0, int y0)
 	x = (x0 * 24) + 12;
 	y = (y0 * 24) + 12;
     int i = -1;
-	while (is_valid(round(x), round(y)) && ++i < 30)
+	while (is_valid(round(x), round(y)) && ++i < radius)
 	{
         // draw_scale_point(vars, new_point_s(round(x), round(y)), 255 << 8 | 255 << 16);
 		mlx_pixel_put(vars->mlx, vars->win, round(x), round(y), 255 << 8 | 255 << 16);
@@ -77,6 +77,30 @@ int is_valid2(int x , int y, t_vars *vars)
 	if  (x < 0 || y < 0)
 		return 0;
 	return 1;
+}
+void	draw_player_as_acircle(t_vars	*vars, t_point point)
+{
+	int	x;
+	int y;
+	int x_iter;
+	int dist;
+
+	x = point.x - radius ;
+	y = point.y - radius  ;
+	while (y < point.y + radius + 1)
+	{
+		x_iter = x;
+		while (x_iter < point.x + radius + 1)
+		{
+			dist = pow(point.x - x_iter, 2) + pow(point.y - y, 2);
+			
+			if (dist  >= pow(radius, 2) - 3)
+				mlx_pixel_put(vars->mlx, vars->win, x_iter, y, 0x45612);
+			x_iter++;
+		}
+		y++;
+	}
+	
 }
 void draw_wall(t_vars *vars)
 {
@@ -133,7 +157,7 @@ void draw_wall(t_vars *vars)
 	}
 	draw_scale_point(vars, new_point_s((4 * 24) + 12,(4 * 24) + 12), 255 | 255 << 16| 255<< 8);
 
-
+	draw_player_as_acircle(vars, new_point_s((4 * 24) + 12,(4 * 24) + 12));
 
 
 
