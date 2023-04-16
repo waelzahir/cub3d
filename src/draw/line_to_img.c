@@ -3,38 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   line_to_img.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 15:54:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/10 18:04:20 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/16 02:03:58 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cube3d.h"
 
-void	draw_line_to_img(t_game *game, int x_screen)
+void	draw_line_to_img(t_game *game, int x_screen, double x)
 {
-	int	i;
-	int	pos;
-	t_data	*data; 
+	double h_scale;
+	int					y;
 
-	i = game->draw_start;
-	data = &game->img;
-	while (i <= game->draw_end)
+	game->draw_start--;
+	h_scale =   (double)game->textures[game->raypole].height / game->lineHeight;
+	x = x * (double)game->textures[game->raypole].width;
+	y = 0;
+	if (game->draw_start == -1)
+		y = (game->lineHeight - screenHeight) / 2;
+	while (++game->draw_start <= game->draw_end)
 	{
-		pos = (i * data->line_length) + (x_screen * (data->bits_per_pixel / 8));
-		if (game->side == 1)
-		{
-			data->addr[pos] = 112; 
-			data->addr[pos + 1] = 23;
-			data->addr[pos + 2] = 122;	
-		}
-		else
-		{
-			data->addr[pos] = 0; 
-			data->addr[pos + 1] = 23;
-			data->addr[pos + 2] = 122;	
-		}
-		i++;
+		pixel_put(&game->img, x_screen, game->draw_start, pixel_get(&game->textures[game->raypole], x, y * h_scale));
+		y++;
 	}
 }
