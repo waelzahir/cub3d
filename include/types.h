@@ -94,6 +94,7 @@ typedef struct	s_game
 	int			hit;
 	int			side;
 	int			raypole;
+	int			x_tex;
 	//colors: index 0 ceiling color , index 1 floor color
 	int			color[2];
 	

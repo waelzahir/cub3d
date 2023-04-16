@@ -1,7 +1,10 @@
 ---------------------------------------------------
+src/draw/coloraze.c
+src/draw/draw.c
 src/draw/init_img.c
 src/draw/img_to_widow.c
 src/draw/line_to_img.c
+src/calcul/x_textures.c
 src/calcul/get_ray_polarity.c
 src/calcul/calcul_game.c
 src/calcul/start_end.c
@@ -12,6 +15,7 @@ src/calcul/raydir.c
 src/calcul/perpWallDist_hight.c
 src/calcul/dda.c
 src/debug/draw_2d_line.c
+src/utils/pixels.c
 src/utils/ft_abs.c
 src/utils/get_next_line_utils.c
 src/utils/get_next_line.c
@@ -24,6 +28,7 @@ src/parser/parser_parse_config.c
 src/parser/parser_check_parsed_map.c
 src/parser/parser_parse_colors.c
 src/parser/parser.c
+src/render.c
 src/mouse_logic_for_bonus.c
 src/handling_keys.c
 src/game_loop.c

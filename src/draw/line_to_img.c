@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   line_to_img.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 15:54:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 02:03:58 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/16 06:10:33 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	draw_line_to_img(t_game *game, int x_screen, double x)
 
 	game->draw_start--;
 	h_scale =   (double)game->textures[game->raypole].height / game->lineHeight;
-	x = x * (double)game->textures[game->raypole].width;
 	y = 0;
 	if (game->draw_start == -1)
 		y = (game->lineHeight - screenHeight) / 2;

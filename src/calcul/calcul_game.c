@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calcul_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 06:44:25 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 01:48:06 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/16 06:03:45 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	calcul_game(t_game *game, t_pl *player, int x_screen)
 		calculate_perpWallDist_and_hight(game);
 		calculate_lowest_and_highest_pixel(game);
 		get_ray_polarity(game);
+		get_x_textures(game, player);
 }

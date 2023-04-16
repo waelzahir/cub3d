@@ -20,16 +20,16 @@
 
 
 // function
-int init(t_vars *_vars, char *file);
+int		init(t_vars *_vars, char *file);
 
 // utils
 void	print_map_on_terminal(int map[mapWidth][mapHeight]);
 
 // game_loop
-int	game_loop(t_vars *vars);
+int		game_loop(t_vars *vars);
 
 // mlx_hook 
-void game_hooks(t_vars *vars);
+void	game_hooks(t_vars *vars);
 
 // points
 void	init_point(t_point *_point, int x, int y);
@@ -48,23 +48,25 @@ void		rotate_vector(t_vars *vars, t_vector *a, double teta);
 // draw map
 void	draw_wall(t_vars *vars);
 // exit_game
-int	exit_game(t_vars *vars);
+int		exit_game(t_vars *vars);
 
 
 
 // utils 
-double ft_dabs(double num);
+double	ft_dabs(double num);
+void	pixel_put(t_data *data, int x, int y, int color);
+int		pixel_get(t_data *data, int x, int y);
 
 // feat test: keys
-int	press_key(int keycode, t_vars *var);
-int	release_key(int keycode, t_vars *var);
+int		press_key(int keycode, t_vars *var);
+int		release_key(int keycode, t_vars *var);
 void	move_horizontal(t_vars	*vars);
 void	move_vertical(t_vars	*vars);
 void	move_rotation(t_vars	*vars);
-int	render(t_vars	*vars);
+int		render(t_vars	*vars);
 int     move_mouse(int x, int y , t_vars *vars);
 void	get_ray_polarity(t_game	*game);
-int	pixel_get(t_data *data, int x, int y);
+int		pixel_get(t_data *data, int x, int y);
 void	pixel_put(t_data *data, int x, int y, int color);
 
 #endif

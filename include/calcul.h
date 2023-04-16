@@ -12,4 +12,7 @@ void	calculate_perpWallDist_and_hight(t_game *game);
 void	calculate_lowest_and_highest_pixel(t_game *game);
 void	calcul_game(t_game *game, t_pl *player, int x_screen);
 
+// textures
+void	get_x_textures(t_game *game, t_pl *player);
+
 #endif

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.h                                             :+:      :+:    :+:   */
+/*   coloraze.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 16:58:07 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 05:58:29 by tel-mouh         ###   ########.fr       */
+/*   Created: 2023/04/16 05:57:58 by tel-mouh          #+#    #+#             */
+/*   Updated: 2023/04/16 05:58:48 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAW_H
-# define DRAW_H
+#include "Cube3d.h"
 
-# include "types.h"
+void colorize_floor_and_ceiling(t_game	*game, int x)
+{
+	int st;
+	int en;
 
-void	draw(t_game *game,int x_screen);
-int		init_image_to_draw(t_vars *vars);
-void	draw_line_to_img(t_game *game, int x_screen , double x);
-void	draw_img_to_window(t_vars *vars);
-void	colorize_floor_and_ceiling(t_game	*game, int x);
-
-#endif
+	st = -1;
+	en = game->draw_end - 1;
+	while (++st < game->draw_start)
+		pixel_put(&game->img, x, st, game->color[0]);
+	while (++en < screenHeight - 1)
+		pixel_put(&game->img, x, en, game->color[1]);
+}

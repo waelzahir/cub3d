@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
+#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/15 05:47:07 by ozahir           ###   ########.fr        #
+#    Updated: 2023/04/16 06:02:08 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,12 +52,12 @@ LOG_FILE = lastcompiled.log
 SRC = 			vectors.c      init.c      point.c\
 				mlx_hook.c     main.c      print_functions.c\
 				exit_game.c    game_loop.c handling_keys.c\
-				mouse_logic_for_bonus.c
+				mouse_logic_for_bonus.c render.c
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 # ################SRCS_Objs_Utils####################
 
-SRC_UTILS =		get_next_line.c get_next_line_utils.c ft_abs.c
+SRC_UTILS =		get_next_line.c get_next_line_utils.c ft_abs.c pixels.c
 OBJ_UTILS = $(addprefix obj/utils/, $(SRC_UTILS:.c=.o))
 
 # ################SRCS_Objs_Parser####################
@@ -78,11 +78,11 @@ OBJ_DEBUG = $(addprefix obj/debug/, $(SRC_DEBUG:.c=.o))
 
 SRC_CALCUL = 	dda.c	perpWallDist_hight.c	raydir.c	step_sides.c\
 				delta.c	player.c				start_end.c calcul_game.c\
-				get_ray_polarity.c
+				get_ray_polarity.c              x_textures.c
 OBJ_CALCUL = $(addprefix obj/calcul/, $(SRC_CALCUL:.c=.o))
 # ################SRCS_Draw####################
 
-SRC_DRAW = 	line_to_img.c img_to_widow.c  init_img.c
+SRC_DRAW = 	line_to_img.c img_to_widow.c  init_img.c draw.c coloraze.c
 OBJ_DRAW = $(addprefix obj/draw/, $(SRC_DRAW:.c=.o))
 
 # ################OBJSALL############################

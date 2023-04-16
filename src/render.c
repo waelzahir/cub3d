@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.h                                             :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 16:58:07 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 05:58:29 by tel-mouh         ###   ########.fr       */
+/*   Created: 2023/04/16 06:00:05 by tel-mouh          #+#    #+#             */
+/*   Updated: 2023/04/16 06:00:40 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAW_H
-# define DRAW_H
+#include "Cube3d.h"
 
-# include "types.h"
-
-void	draw(t_game *game,int x_screen);
-int		init_image_to_draw(t_vars *vars);
-void	draw_line_to_img(t_game *game, int x_screen , double x);
-void	draw_img_to_window(t_vars *vars);
-void	colorize_floor_and_ceiling(t_game	*game, int x);
-
-#endif
+int	render(t_vars	*vars)
+{
+	if (vars->press.hor != -1)
+		move_horizontal(vars);
+	if (vars->press.ver != -1)
+		move_vertical(vars);
+	if (vars->press.rot != -1)
+		move_rotation(vars);
+	if (vars->press.hor != -1 || vars->press.ver != -1 || vars->press.rot != -1)
+		game_loop(vars);
+	return (0);
+}
