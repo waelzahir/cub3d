@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:39:03 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 01:37:55 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/16 05:25:34 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	game_loop(t_vars *vars)
 		draw_line_to_img(game, x_screen, 0);
 		// print_game_infos(game, player, x_screen, 3);
 	}
+	printf("ray_pol  %d\n", game->raypole);
+	printf("side  %d\n", game->side);
 	draw_img_to_window(vars);
 	draw_wall(vars);
 	return 0;

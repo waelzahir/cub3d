@@ -130,5 +130,12 @@ typedef struct s_vars
 	t_pressed	press;
 } t_vars;
 
+typedef enum s_directions
+{
+    NORTH,
+    SOUTH,
+    EAST,
+    WEST
+}t_directions;
 
 #endif
