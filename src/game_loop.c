@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:39:03 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/15 05:53:03 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/16 01:37:55 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,17 @@ void	pixel_put(t_data *data, int x, int y, int color)
  
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
+}
+int	pixel_get(t_data *data, int x, int y)
+{
+	char	*dst;
+ 
+	if (y >= data->height)
+		y = data->height - 1;
+	if (x >= data->height)
+		x = data->width - 1;
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	return (*(unsigned int*)dst);
 }
 
 void colorize_floor_and_ceiling(t_game	*game, int x)
@@ -47,7 +58,7 @@ int	game_loop(t_vars *vars)
 	{
 		calcul_game(game, player, x_screen);
 		colorize_floor_and_ceiling(game, x_screen);
-		draw_line_to_img(game, x_screen);
+		draw_line_to_img(game, x_screen, 0);
 		// print_game_infos(game, player, x_screen, 3);
 	}
 	draw_img_to_window(vars);

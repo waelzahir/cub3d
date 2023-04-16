@@ -64,5 +64,7 @@ void	move_rotation(t_vars	*vars);
 int	render(t_vars	*vars);
 int     move_mouse(int x, int y , t_vars *vars);
 void	get_ray_polarity(t_game	*game);
+int	pixel_get(t_data *data, int x, int y);
+void	pixel_put(t_data *data, int x, int y, int color);
 
 #endif
