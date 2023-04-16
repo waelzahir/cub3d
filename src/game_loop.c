@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:39:03 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 06:11:09 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/16 09:51:48 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	game_loop(t_vars *vars)
 		// print_game_infos(game, player, x_screen, 3);
 	}
 	draw_img_to_window(vars);
-	draw_wall(vars);
+	draw_2d_map(vars);
 	return 0;
 }
 

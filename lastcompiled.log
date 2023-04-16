@@ -1,4 +1,13 @@
 ---------------------------------------------------
+src/draw/2d_map.c
+---------------------------------------------------
+src/draw/2d_map.c
+src/debug/draw_2d_line.c
+src/handling_keys.c
+---------------------------------------------------
+src/draw/mini_dda.c
+src/draw/2d_map.c
+src/draw/scale_point.c
 src/draw/coloraze.c
 src/draw/draw.c
 src/draw/init_img.c
@@ -15,6 +24,7 @@ src/calcul/raydir.c
 src/calcul/perpWallDist_hight.c
 src/calcul/dda.c
 src/debug/draw_2d_line.c
+src/utils/is_valid.c
 src/utils/pixels.c
 src/utils/ft_abs.c
 src/utils/get_next_line_utils.c

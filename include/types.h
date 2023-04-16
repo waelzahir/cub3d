@@ -66,21 +66,21 @@ typedef struct	s_game
 {
 	char		**smap;
 
-	double		cameraX;
-	double		rayDirX;
-	double		rayDirY;
+	double		camerax;
+	double		raydirx;
+	double		raydiry;
 
 
-	double		sideDistX;
-	double		sideDistY;
+	double		sidedistx;
+	double		sidedisty;
 	
-	double		deltaDistX;
-	double		deltaDistY;
-	double		perpWallDist;
+	double		deltadistx;
+	double		deltadisty;
+	double		perpwalldist;
 	int			lineHeight;
 
-	int			mapX;
-	int			mapY;
+	int			mapx;
+	int			mapy;
 
 	int			map_hight;
 	int			map_width;

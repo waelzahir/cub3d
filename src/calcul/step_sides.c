@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calcul_step_sides.c                                :+:      :+:    :+:   */
+/*   step_sides.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 05:57:41 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/10 06:00:49 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/16 09:16:34 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 void	calculate_steps_init_side_dist(t_game *_ga, t_pl *player)
 {
-	if (_ga->rayDirX < 0)
+	if (_ga->raydirx < 0)
     {
         _ga->stepX = -1;
-        _ga->sideDistX = (player->pos_p.x - _ga->mapX) * _ga->deltaDistX;
+        _ga->sidedistx = (player->pos_p.x - _ga->mapx) * _ga->deltadistx;
     }
 	else
 	{
 		_ga->stepX = 1;
-		_ga->sideDistX = (_ga->mapX + 1.0 - player->pos_p.x) * _ga->deltaDistX;
+		_ga->sidedistx = (_ga->mapx + 1.0 - player->pos_p.x) * _ga->deltadistx;
 	}
-	if (_ga->rayDirY < 0)
+	if (_ga->raydiry < 0)
 	{
 		_ga->stepY = -1;
-		_ga->sideDistY = (player->pos_p.y - _ga->mapY) * _ga->deltaDistY;
+		_ga->sidedisty = (player->pos_p.y - _ga->mapy) * _ga->deltadisty;
 	}
 	else
 	{
 		_ga->stepY = 1;
-		_ga->sideDistY = (_ga->mapY + 1.0 - player->pos_p.y) * _ga->deltaDistY;
+		_ga->sidedisty = (_ga->mapy + 1.0 - player->pos_p.y) * _ga->deltadisty;
 	}
 }

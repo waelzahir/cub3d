@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 05:32:48 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 06:06:49 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/16 09:15:35 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	get_x_textures(t_game *game, t_pl *player)
 	int		x_text;
 
 	if (game->side == 1)
-		wallx = player->pos_p.x + game->perpWallDist * game->rayDirX;
+		wallx = player->pos_p.x + game->perpwalldist * game->raydirx;
 	else
-		wallx = player->pos_p.y + game->perpWallDist * game->rayDirY;
+		wallx = player->pos_p.y + game->perpwalldist * game->raydiry;
 	wallx = wallx - (int)(wallx);
 	
 	x_text = wallx * (double)game->textures[game->raypole].width;

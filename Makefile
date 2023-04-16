@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/16 06:02:08 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/16 09:46:19 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,8 @@ OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 # ################SRCS_Objs_Utils####################
 
-SRC_UTILS =		get_next_line.c get_next_line_utils.c ft_abs.c pixels.c
+SRC_UTILS =		get_next_line.c get_next_line_utils.c ft_abs.c \
+				pixels.c is_valid.c
 OBJ_UTILS = $(addprefix obj/utils/, $(SRC_UTILS:.c=.o))
 
 # ################SRCS_Objs_Parser####################
@@ -82,7 +83,8 @@ SRC_CALCUL = 	dda.c	perpWallDist_hight.c	raydir.c	step_sides.c\
 OBJ_CALCUL = $(addprefix obj/calcul/, $(SRC_CALCUL:.c=.o))
 # ################SRCS_Draw####################
 
-SRC_DRAW = 	line_to_img.c img_to_widow.c  init_img.c draw.c coloraze.c
+SRC_DRAW = 	line_to_img.c img_to_widow.c  init_img.c draw.c coloraze.c\
+			scale_point.c 2d_map.c mini_dda.c
 OBJ_DRAW = $(addprefix obj/draw/, $(SRC_DRAW:.c=.o))
 
 # ################OBJSALL############################

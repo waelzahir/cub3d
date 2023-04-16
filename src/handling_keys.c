@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 03:26:33 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/12 08:52:51 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/16 09:54:55 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	move_vertical(t_vars	*vars)
 			vars->player.pos_p.y = checky;
 	}
 }
+
 void	move_horizontal(t_vars	*vars)
 {
 	double checkx;

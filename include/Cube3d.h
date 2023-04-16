@@ -45,8 +45,6 @@ t_vector	*new_vector(int dx, int dy);
 t_vector	add_vector(t_vector a, t_vector b);
 t_vector	rotate_vector_byteta(t_vars *vars, t_vector *a, double teta);
 void		rotate_vector(t_vars *vars, t_vector *a, double teta);
-// draw map
-void	draw_wall(t_vars *vars);
 // exit_game
 int		exit_game(t_vars *vars);
 
@@ -56,6 +54,7 @@ int		exit_game(t_vars *vars);
 double	ft_dabs(double num);
 void	pixel_put(t_data *data, int x, int y, int color);
 int		pixel_get(t_data *data, int x, int y);
+int		is_valid_cords(int x , int y, t_vars *vars);
 
 // feat test: keys
 int		press_key(int keycode, t_vars *var);
