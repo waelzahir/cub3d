@@ -14,24 +14,17 @@
 
 static void	draw_border(t_vars *vars)
 {
-	int i;
-	int j;
+	int	i;
+	int	color;
 
-	
-	i = 0;
-	while (i < 216)
+	color = 180 << 16 | 180 << 8 | 180;
+	i = -1;
+	while (++i < 216)
 	{
-		j = 0;
-		while (j < 216 && (i == 0 || i == 215))
-		{
-			draw_scale_point(vars, new_point_s(j,i), 255 << 16| 255<< 8);
-			j++;
-		}
-		if ((i != 0 && i != 215))
-			draw_scale_point(vars, new_point_s(0,i), 255 | 255 << 16| 255<< 8);
-		if ((i != 0 && i != 215))
-			draw_scale_point(vars, new_point_s(215,i), 255 | 255 << 16| 255<< 8);
-		i++;
+		draw_scale_point(vars, new_point_s(0,i), color);
+		draw_scale_point(vars, new_point_s(215,i), color);
+		draw_scale_point(vars, new_point_s(i,0), color);
+		draw_scale_point(vars, new_point_s(i,215), color);
 	}
 }
 
