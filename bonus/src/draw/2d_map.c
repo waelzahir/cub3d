@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   2d_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 09:20:30 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 11:39:05 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 13:24:28 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ static void	draw_border(t_vars *vars)
 	}
 }
 
-static void	check_and_draw(t_vars *vars, int x, int y, int px, int py)
+static void	check_and_draw(t_vars *vars, int x, int y, t_point p)
 {
 	if (is_valid_cords(x, y, vars) && vars->vgame.smap[y][x] == '1')
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->imgs.wall,
-			px * 24, py * 24);
+			p.x * 24, p.y * 24);
 }
 
 static void	draw_walls(t_vars *vars, int x, int y)
@@ -44,14 +44,14 @@ static void	draw_walls(t_vars *vars, int x, int y)
 		j = 0;
 		while (j < 5)
 		{
-			check_and_draw(vars, x + j, y + i, 4 + j, 4 + i);
-			check_and_draw(vars, x + j, y - i, 4 + j, 4 - i);
-			check_and_draw(vars, x - j, y + i, 4 - j, 4 + i);
-			check_and_draw(vars, x - j, y - i, 4 - j, 4 - i);
-			check_and_draw(vars, x, y - i, 4, 4 - i);
-			check_and_draw(vars, x, y + i, 4, 4 + i);
-			check_and_draw(vars, x - j, y, 4 - j, 4);
-			check_and_draw(vars, x + j, y, 4 + j, 4);
+			check_and_draw(vars, x + j, y + i, new_point_s(4 + j, 4 + i));
+			check_and_draw(vars, x + j, y - i, new_point_s(4 + j, 4 - i));
+			check_and_draw(vars, x - j, y + i, new_point_s(4 - j, 4 + i));
+			check_and_draw(vars, x - j, y - i, new_point_s(4 - j, 4 - i));
+			check_and_draw(vars, x, y - i, new_point_s(4, 4 - i));
+			check_and_draw(vars, x, y + i, new_point_s(4, 4 + i));
+			check_and_draw(vars, x - j, y, new_point_s(4 - j, 4));
+			check_and_draw(vars, x + j, y, new_point_s(4 + j, 4));
 			j++;
 		}
 		i++;
@@ -74,7 +74,8 @@ static void	draw_player_as_acircle(t_vars	*vars, t_point point)
 		{
 			dist = pow(point.x - x_iter, 2) + pow(point.y - y, 2);
 			if (dist >= pow(RADIUS, 2) - 3)
-				mlx_pixel_put(vars->mlx, vars->win, x_iter, y, vars->vgame.color[1]);
+				mlx_pixel_put(vars->mlx, vars->win, x_iter, y, \
+				vars->vgame.color[1]);
 			x_iter++;
 		}
 		y++;

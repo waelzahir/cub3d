@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define_keys.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 02:46:30 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/17 02:49:26 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 13:26:19 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 #  define D 100
 #  define A 97
 #  define ESC 65307
-#  define ON_KEYDOWN_MASK  (1L<<0)
-#  define ON_KEYUP_MASK  (1L<<1)
+#  define ON_KEYDOWN_MASK  1
+#  define ON_KEYUP_MASK  2
 
-#endif
+# endif
 
 # ifdef MACOS
 
@@ -43,7 +43,7 @@
 #  define ON_KEYDOWN_MASK  0
 #  define ON_KEYUP_MASK  0
 
-#endif
+# endif
 
 typedef enum s_keys
 {

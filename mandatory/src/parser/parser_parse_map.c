@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_parse_map.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 00:23:49 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/17 05:45:18 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 12:12:58 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 int	is_map_line_empty(char *line)
 {
 	int	i;
-	int	space;
 	int	comp;
 
-	space = 0;
 	i = 0;
 	comp = 0;
 	if (line[0] == '\n')

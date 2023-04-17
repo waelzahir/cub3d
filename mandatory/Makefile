@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
+#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/17 04:57:10 by ozahir           ###   ########.fr        #
+#    Updated: 2023/04/17 13:12:55 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,8 @@ LOG_FILE = lastcompiled.log
 # ################SRCS_Objs##########################
 
 SRC = 			vectors.c      init.c      point.c\
-				mlx_hook.c     main.c      print_functions.c\
-				exit_game.c    game_loop.c handling_keys.c\
-				render.c
+				mlx_hook.c     main.c      render.c\
+				exit_game.c    game_loop.c handling_keys.c
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 # ################SRCS_Objs_Utils####################
@@ -70,10 +69,10 @@ SRC_PARSER = 	parser.c                   parser_parse_colors.c\
 				parser_helpers.c           
 OBJ_PARSER = $(addprefix obj/parser/, $(SRC_PARSER:.c=.o))
 
-# ################SRCS_Objs_debug####################
+# # ################SRCS_Objs_debug####################
 
-SRC_DEBUG =		draw_2d_line.c
-OBJ_DEBUG = $(addprefix obj/debug/, $(SRC_DEBUG:.c=.o))
+# SRC_DEBUG =		draw_2d_line.c
+# OBJ_DEBUG = $(addprefix obj/debug/, $(SRC_DEBUG:.c=.o))
 
 # ################SRCS_Calcul####################
 
@@ -90,11 +89,11 @@ OBJ_DRAW = $(addprefix obj/draw/, $(SRC_DRAW:.c=.o))
 # ################OBJSALL############################
 
 OBJ_ALLS =	$(OBJ) $(OBJ_PARSER)  $(OBJ_UTILS)\
-			$(OBJ_DEBUG) $(OBJ_CALCUL) $(OBJ_DRAW)
+			$(OBJ_CALCUL) $(OBJ_DRAW)
 
 # ################OBJDIR############################
 
-OBJ_DIRS = obj obj/utils obj/parser obj/debug/ obj/calcul/ obj/draw/
+OBJ_DIRS = obj obj/utils obj/parser obj/calcul/ obj/draw/
 
 # ################COLOR##############################
 

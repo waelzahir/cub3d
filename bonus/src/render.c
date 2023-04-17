@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 06:00:05 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 09:41:50 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 12:28:28 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	render(t_vars	*vars)
 {
-
 	if (vars->press.hor != -1)
 		move_horizontal(vars);
 	if (vars->press.ver != -1)

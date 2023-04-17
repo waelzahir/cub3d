@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 02:51:57 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/17 11:36:05 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 13:35:06 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 // color
 # define COLORDRAW 0xFFFF00
 # define COLORRAY 0xFFFF00
+
 typedef struct s_speed
 {
 	double	move;
