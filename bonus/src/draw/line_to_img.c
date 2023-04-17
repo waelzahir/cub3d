@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 15:54:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 06:07:48 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 11:24:58 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	draw_line_to_img(t_game *game, int x_screen, double x)
 	int		y;
 
 	game->draw_start--;
-	h_scale = (double)game->textures[game->raypole].height / game->lineheight;
+	h_scale = (double)(game->textures[game->raypole].height) / game->lineheight;
 	y = 0;
 	if (game->draw_start == -1)
 		y = (game->lineheight - SCREENHEIGHT) / 2;

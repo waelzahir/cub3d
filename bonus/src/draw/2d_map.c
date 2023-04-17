@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 09:20:30 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 08:51:26 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 11:39:05 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 static void	draw_border(t_vars *vars)
 {
 	int	i;
-	int	color;
 
-	color = 180 << 16 | 180 << 8 | 180;
 	i = -1;
 	while (++i < 216)
 	{
-		draw_scale_point(vars, new_point_s(0, i), color);
-		draw_scale_point(vars, new_point_s(215, i), color);
-		draw_scale_point(vars, new_point_s(i, 0), color);
-		draw_scale_point(vars, new_point_s(i, 215), color);
+		draw_scale_point(vars, new_point_s(0, i), COLORRAY);
+		draw_scale_point(vars, new_point_s(215, i), COLORRAY);
+		draw_scale_point(vars, new_point_s(i, 0), COLORRAY);
+		draw_scale_point(vars, new_point_s(i, 215), COLORRAY);
 	}
 }
 
@@ -88,7 +86,7 @@ void	draw_2d_map(t_vars *vars)
 	draw_walls(vars, vars->player.pos_p.x, vars->player.pos_p.y);
 	draw_border(vars);
 	draw_scale_point(vars, new_point_s((4 * 24) + 12, (4 * 24) + 12),
-		255 | 255 << 16 | 255 << 8);
+		0xffffff);
 	draw_player_as_acircle(vars, new_point_s((4 * 24) + 12, (4 * 24) + 12));
 	dda_line_drawing(&vars->player.vec, vars, 4, 4);
 }

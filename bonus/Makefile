@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/16 10:38:14 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/17 11:41:48 by ozahir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ else
 	NEW_FILE = ~/goinfre/newfile
 	EMOJI = "⬛"
 	LFLAGS=-lmlx -framework OpenGL -framework AppKit 
-	IFLAGS= -D MACOS=1
+	IFLAGS= -D MACOS=1 
 endif
 
 
@@ -39,7 +39,7 @@ UHEADERS := $(addprefix include/, $(UHEADERS))
 # ################COMMANDS###########################
 
 RM = rm -rf
-CC = gcc
+CC = gcc -g
 HEADERSFLAGS = -I include
 CFLAG =  -Wall -Wextra -Werror $(HEADERSFLAGS)
 

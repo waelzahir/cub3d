@@ -1,10 +1,10 @@
-WE jahad.xpm
-NO  textures/north1.xpm
+WE  textures/north1.xpm
+NO  textures/east1.xpm
 SO  textures/south1.xpm
-EA  textures/east1.xpm
+EA  textures/west1.xpm
 
 C    0,0,12
-F     255,255,125
+F    255,255,125
 
 
 11111111

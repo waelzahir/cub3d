@@ -12,8 +12,8 @@
 #  define D 100
 #  define A 97
 #  define ESC 65307
-#  define ON_KEYDOWN_MASK  (1L<<0)
-#  define ON_KEYUP_MASK  (1L<<1)
+#  define ON_KEYDOWN_MASK  1
+#  define ON_KEYUP_MASK  2
 
 #endif
 
