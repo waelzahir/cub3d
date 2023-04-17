@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 09:43:24 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 06:15:14 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 08:51:37 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	dda_line_drawing(t_vector *vec, t_vars *vars, int x0, int y0)
 	iy = (vec->dy / steps);
 	x = (x0 * 24) + 12;
 	y = (y0 * 24) + 12;
-    int i = -1;
-	while (is_valid(round(x), round(y)) && ++i < radius)
+	int i = -1;
+	while (is_valid(round(x), round(y)) && ++i < RADIUS)
 	{
 		mlx_pixel_put(vars->mlx, vars->win, round(x), round(y), 255 << 8 | 255 << 16);
 		x += ix;

@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:39:03 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 06:05:21 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 08:37:19 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int	game_loop(t_vars *vars)
 		draw(game, x_screen);
 	}
 	draw_img_to_window(vars);
+	draw_2d_map(vars);
 	return (0);
 }

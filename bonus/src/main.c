@@ -6,17 +6,15 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:45:02 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 06:03:23 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 08:48:01 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Cube3d.h"
 
-
-int main(int ac, char	**av)
+int	main(int ac, char	**av)
 {
-	t_vars vars;
+	t_vars	vars;
 
 	if (ac != 2)
 		return (1);

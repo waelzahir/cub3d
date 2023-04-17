@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 09:20:30 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 06:21:27 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 08:51:26 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,16 @@ static void	draw_player_as_acircle(t_vars	*vars, t_point point)
 	int	x_iter;
 	int	dist;
 
-	x = point.x - radius;
-	y = point.y - radius;
-	while (y < point.y + radius + 1)
+	x = point.x - RADIUS;
+	y = point.y - RADIUS;
+	while (y < point.y + RADIUS + 1)
 	{
 		x_iter = x;
-		while (x_iter < point.x + radius + 1)
+		while (x_iter < point.x + RADIUS + 1)
 		{
 			dist = pow(point.x - x_iter, 2) + pow(point.y - y, 2);
-			if (dist >= pow(radius, 2) - 3)
-				mlx_pixel_put(vars->mlx, vars->win, x_iter, y, 0x45612);
+			if (dist >= pow(RADIUS, 2) - 3)
+				mlx_pixel_put(vars->mlx, vars->win, x_iter, y, vars->vgame.color[1]);
 			x_iter++;
 		}
 		y++;

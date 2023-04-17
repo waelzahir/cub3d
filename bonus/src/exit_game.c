@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   exit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:28:11 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 11:52:12 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 08:45:01 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cube3d.h"
 
-static void free_text_image(t_vars *vars, t_data *texs)
+static	void	free_text_image(t_vars *vars, t_data *texs)
 {
 	int	i;
 

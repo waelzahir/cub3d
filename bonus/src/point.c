@@ -6,17 +6,17 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:34:29 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 06:01:48 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 08:49:42 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cube3d.h"
 
-t_point new_point_s(int x, int y)
+t_point	new_point_s(int x, int y)
 {
 	t_point	p;
 
 	p.x = x;
 	p.y = y;
-	return p;
+	return (p);
 }
