@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parser_check_parsed_map.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 01:15:24 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/06 05:27:38 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 01:26:04 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cube3d.h"
-
 
 int	check_axis(char **map, int x, int y)
 {
@@ -49,7 +48,6 @@ int	check_if_map_closed(char **map)
 	}
 	return (0);
 }
-
 
 int	get_map_sizes(char **map, int *x)
 {

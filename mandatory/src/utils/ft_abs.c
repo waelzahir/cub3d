@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 06:36:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/07 06:05:23 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 01:30:28 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-double ft_dabs(double num)
+#include "Cube3d.h"
+
+double	ft_dabs(double num)
 {
 	if (num >= 0)
 		return (num);
 	else
-		return  (-1 * num);
+		return (-1 * num);
 }

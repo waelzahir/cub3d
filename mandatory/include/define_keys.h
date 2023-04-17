@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   define_keys.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/17 02:46:30 by ozahir            #+#    #+#             */
+/*   Updated: 2023/04/17 02:49:26 by ozahir           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DEFINE_KEYS_H
 # define DEFINE_KEYS_H
 
-#ifndef MACOS
+# ifndef MACOS
 
 #  define RIGHT 65363
 #  define LEFT 65361
@@ -17,7 +29,7 @@
 
 #endif
 
-#ifdef MACOS
+# ifdef MACOS
 
 #  define RIGHT 124
 #  define LEFT 123
@@ -33,8 +45,7 @@
 
 #endif
 
-
-typedef	enum s_keys
+typedef enum s_keys
 {
 	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
@@ -43,7 +54,6 @@ typedef	enum s_keys
 	ON_MOUSEMOVE = 6,
 	ON_EXPOSE = 12,
 	ON_DESTROY = 17
-} t_keys;
-#define	radius 10
+}	t_keys;
 
 #endif

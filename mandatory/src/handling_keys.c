@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handling_keys.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 03:26:33 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/16 09:54:55 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 02:20:53 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	press_key(int keycode, t_vars *var)
 {
-	if (var->press.hor == -1 && (keycode == UP || keycode == DOWN || keycode == W || keycode == S))
+	if (var->press.hor == -1 && (keycode == UP
+			|| keycode == DOWN || keycode == W || keycode == S))
 			var->press.ver = keycode;
-	if (var->press.ver == -1 && ( keycode == A || keycode == D))
+	if (var->press.ver == -1 && (keycode == A || keycode == D))
 			var->press.hor = keycode;
 	if (var->press.rot == -1 && (keycode == LEFT || keycode == RIGHT))
 			var->press.rot = keycode;
@@ -36,13 +37,12 @@ int	release_key(int keycode, t_vars *var)
 	return (0);
 }
 
-
 void	move_vertical(t_vars	*vars)
 {
-	double checkx;
-	double checky;
+	double	checkx;
+	double	checky;
 
-	if (vars->press.ver == UP || vars->press.ver == W )
+	if (vars->press.ver == UP || vars->press.ver == W)
 	{
 		checkx = vars->player.pos_p.x + (vars->player.vec.dx) * 0.12;
 		if (vars->vgame.smap[(int)vars->player.pos_p.y][(int)checkx] == '0')
@@ -64,9 +64,9 @@ void	move_vertical(t_vars	*vars)
 
 void	move_horizontal(t_vars	*vars)
 {
-	double checkx;
-	double checky;
-	
+	double	checkx;
+	double	checky;
+
 	if (vars->press.hor == D)
 	{
 		checkx = vars->player.pos_p.x + (vars->player.plane.x) * 0.12;
@@ -86,6 +86,7 @@ void	move_horizontal(t_vars	*vars)
 			vars->player.pos_p.y = checky;
 	}
 }
+
 void	move_rotation(t_vars	*vars)
 {
 	if (vars->press.rot == LEFT)

@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:45:02 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 11:09:45 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 02:23:02 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Cube3d.h"
 
-
-int main(int ac, char	**av)
+int	main(int ac, char	**av)
 {
-	t_vars vars;
+	t_vars	vars;
 
 	if (ac != 2)
 		return (1);

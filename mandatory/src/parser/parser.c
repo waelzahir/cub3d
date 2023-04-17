@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 00:18:24 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/06 05:23:22 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 01:25:42 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	parser(char *file, t_vars *_v)
 		return (close(fd), destroy2d_configs(configs), 1);
 	close(fd);
 	_v->vgame.smap = parse_check_is_map_valid(_v->vgame.smap, _v);
-	
 	if (!_v->vgame.smap)
 		return (destroy2d_configs(configs), 1);
 	if (convert_xpm_file_to_data(_v, configs))
@@ -97,5 +96,3 @@ char	**inside_parse_config_map(int fd, t_vars *_v)
 	_v->vgame.smap = ft_split(map, '\n');
 	return (free(map), _v->vgame.smap);
 }
-
-

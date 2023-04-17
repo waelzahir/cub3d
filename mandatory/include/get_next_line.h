@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 08:13:53 by tel-mouh          #+#    #+#             */
-/*   Updated: 2021/12/27 14:33:45 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 02:57:23 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-
 # define BUFFER_SIZE 42
+
 size_t	_ftstrlen(const char *s);
 size_t	_ftstrlcpy(char *dst, const char *src, size_t dstsize);
 char	*_ftstrdup(const char *s1);

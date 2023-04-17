@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   exit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:28:11 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 11:50:26 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 02:18:00 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cube3d.h"
 
-static void free_text_image(t_vars *vars, t_data *texs)
+static	void	free_text_image(t_vars *vars, t_data *texs)
 {
 	int	i;
 
@@ -20,7 +20,7 @@ static void free_text_image(t_vars *vars, t_data *texs)
 	while (++i < 4)
 	{
 		mlx_destroy_image(vars->mlx, texs[i].img);
-		// free(texs[i].addr);
+		free(texs[i].addr);
 	}
 }
 
@@ -43,5 +43,5 @@ int	exit_game(t_vars *vars)
 	free_text_image(vars, vars->vgame.textures);
 	mlx_clear_window(vars->mlx, vars->win);
 	exit(0);
-	return 0;
+	return (0);
 }
