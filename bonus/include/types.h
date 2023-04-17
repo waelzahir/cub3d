@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 02:51:57 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/17 06:04:32 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 09:23:46 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define MAPWIDTH 24
 # define MAPHIGHT 24
-# define SCREENWIDTH 1280
+# define SCREENWIDTH 2000
 # define SCREENHEIGHT 960
 
 typedef struct s_speed
