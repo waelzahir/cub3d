@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 00:23:27 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/01 01:18:37 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 06:24:03 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,3 @@ char	*inside_gnl_skipline(int fd, int trim)
 	}
 	return (line);
 }
-

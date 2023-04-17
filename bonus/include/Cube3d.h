@@ -23,7 +23,6 @@
 int		init(t_vars *_vars, char *file);
 
 // utils
-void	print_map_on_terminal(int map[mapWidth][mapHeight]);
 
 // game_loop
 int		game_loop(t_vars *vars);

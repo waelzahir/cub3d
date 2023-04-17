@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:15:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 02:58:03 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 05:57:30 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,15 @@ int	init(t_vars *_vars, char *file)
 	if (init_img(_vars))
 		return (-1);
 	if (!_vars->mlx)
-		return (perror("init of mlx faild"), -1);
+		return (ft_putstr_fd("init of mlx faild", 2), -1);
 	_vars->win = mlx_new_window(_vars->mlx, SCREENWIDTH, SCREENHEIGHT, "Test");
 	if (!_vars->mlx)
 		return (perror("init of mlx window faild"), -2);
 	if (parser(file, _vars))
-		return (mlx_destroy_window(_vars->mlx, _vars->win), -3);
+	{
+		mlx_destroy_window(_vars->mlx, _vars->win);
+		return (-3);
+	}
 	init_var_game(_vars);
 	return (0);
 }

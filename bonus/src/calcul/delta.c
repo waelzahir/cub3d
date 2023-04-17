@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   delta.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 05:57:41 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 09:16:12 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 06:11:24 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cube3d.h"
 
-void calculate_delta_x_and_y(t_game *game)
+void	calculate_delta_x_and_y(t_game *game)
 {
 	if (!game->raydirx)
 		game->deltadistx = 1e30;

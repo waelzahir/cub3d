@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 01:18:56 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/17 01:26:42 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 05:26:24 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	textures_panic(int index, t_vars *_v, char	*tex)
 		mlx_destroy_image(_v->mlx, _v->vgame.textures[index].img);
 		index--;
 	}
-	mlx_destroy_window(_v->mlx, _v->win);
 	return ;
 }
 

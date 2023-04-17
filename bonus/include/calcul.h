@@ -3,7 +3,7 @@
 
 # include "types.h"
 
-void	calculate_ray_position_and_direction(t_game *game, t_pl *player, int x_screen);
+void	calculate_ray_pos_and_dir(t_game *game, t_pl *player, int x_screen);
 void	set_map_cords_with_player(t_game *game, t_pl *player);
 void	calculate_delta_x_and_y(t_game *game);
 void	calculate_steps_init_side_dist(t_game *game, t_pl *player);

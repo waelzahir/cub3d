@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_get_textures.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 01:18:56 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/16 11:15:29 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 06:24:13 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,14 @@ void	textures_panic(int index, t_vars *_v, char	*tex)
 		mlx_destroy_image(_v->mlx, _v->vgame.textures[index].img);
 		index--;
 	}
-	mlx_destroy_window(_v->mlx, _v->win);
 	return ;
 }
-
 
 void	get_xpm_adresss(t_data *img)
 {
 	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
 			&img->line_length, &img->endian);
 }
-
 
 int	convert_xpm_file_to_data(t_vars *_v, char	**tex)
 {

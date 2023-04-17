@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   game_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:39:03 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 09:51:48 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 06:05:21 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cube3d.h"
-
-
 
 int	game_loop(t_vars *vars)
 {
@@ -24,15 +22,12 @@ int	game_loop(t_vars *vars)
 	game = &vars->vgame;
 	player = &vars->player;
 	if (init_image_to_draw(vars))
-		return -1;
-	while (++x_screen < screenWidth)
+		return (-1);
+	while (++x_screen < SCREENWIDTH)
 	{
 		calcul_game(game, player, x_screen);
 		draw(game, x_screen);
-		// print_game_infos(game, player, x_screen, 3);
 	}
 	draw_img_to_window(vars);
-	draw_2d_map(vars);
-	return 0;
+	return (0);
 }
-

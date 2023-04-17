@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_parse_config.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 00:24:10 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/03 12:03:47 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 06:23:45 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	get_config_key(char *config)
 int	inside_store_param(char **conf, char *line)
 {
 	int	key;
-	// int	len;
 
 	if (!line)
 		return (ft_putstr_fd("Error\nInsuficient configs\n", 2), 1);
@@ -68,7 +67,6 @@ int	inside_store_param(char **conf, char *line)
 		return (free(line), ft_putstr_fd("Error\ninvalid config\n", 2), 1);
 	if (conf[key])
 		return (free(line), ft_putstr_fd("Error\nduplicated config\n", 2), 1);
-	// len = ft_strlen(line);
 	if (key < 4 && check_extention(line))
 		return (free(line), ft_putstr_fd("Error\n!xpm extention\n", 1), 1);
 	if (key < 4)
@@ -77,4 +75,3 @@ int	inside_store_param(char **conf, char *line)
 		conf[key] = ft_strtrim(line + 2, " ");
 	return (free(line), 0);
 }
-

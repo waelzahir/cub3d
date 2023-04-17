@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 00:23:49 by ozahir            #+#    #+#             */
-/*   Updated: 2023/04/12 04:35:35 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 06:23:36 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@ int	is_map_line_empty(char *line)
 {
 	int	i;
 	int	space;
+	int	comp;
 
 	space = 0;
 	i = 0;
+	comp = 0;
 	if (line[0] == '\n')
 		return (free(line), ft_putstr_fd("Error\n empty line in map\n", 2), 1);
 	while (line[i] && line[i] != '\n')
 	{
-		if (line[i] == ' ')
-			space++;
+		if (line[i] == '0' || line[i] == '1')
+			comp++;
 		i++;
 	}
-	if (space + 1 == i)
+	if (!comp)
 		return (free(line), ft_putstr_fd("Error\n empty line in map\n", 2), 1);
 	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 04:31:34 by tel-mouh          #+#    #+#              #
-#    Updated: 2023/04/16 10:58:56 by tel-mouh         ###   ########.fr        #
+#    Updated: 2023/04/17 04:57:10 by ozahir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ UHEADERS := $(addprefix include/, $(UHEADERS))
 RM = rm -rf
 CC = gcc
 HEADERSFLAGS = -I include
-CFLAG =  -Wall -Wextra -Werror $(HEADERSFLAGS)
+CFLAG =  -Wall -Wextra -Werror -g $(HEADERSFLAGS)
 
 # #################LOG_File##########################
 

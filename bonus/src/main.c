@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:45:02 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/16 11:07:09 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/17 06:03:23 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int main(int ac, char	**av)
 	if (ac != 2)
 		return (1);
 	if (init(&vars, av[1]))
-		return (ft_putendl_fd("Error", 2), 1);
+		return (1);
 	game_hooks(&vars);
 }
