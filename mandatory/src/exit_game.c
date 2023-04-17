@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:28:11 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 02:18:00 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 05:55:54 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static	void	free_text_image(t_vars *vars, t_data *texs)
 	while (++i < 4)
 	{
 		mlx_destroy_image(vars->mlx, texs[i].img);
-		free(texs[i].addr);
 	}
 }
 
