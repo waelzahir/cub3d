@@ -18,6 +18,8 @@ B : bonus
 	./cub3d_bonus bonus/map/map.cub
 
 fclean : clean
+	make fclean -C mandatory
+	make fclean -C bonus
 	rm -rf $(EXEC)
 re : fclean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:15:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 06:03:40 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/17 13:55:35 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 */
 static	void	init_var_game(t_vars *vars)
 {
-	vars->player.vec.angle = (PI / 50);
+	vars->player.vec.angle = (PI / 40);
 	vars->player.vec.cangle = -1 * vars->player.vec.angle;
 	vars->player.vec.prec.ang_cos = cos(vars->player.vec.angle);
 	vars->player.vec.prec.ang_sin = sin(vars->player.vec.angle);
