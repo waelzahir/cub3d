@@ -6,7 +6,7 @@
 /*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:15:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/18 04:42:39 by ozahir           ###   ########.fr       */
+/*   Updated: 2023/04/18 06:02:41 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,12 @@ int	init(t_vars *_vars, char *file)
 {
 	ft_bzero(_vars, sizeof(t_vars));
 	_vars->mlx = mlx_init();
-	if (!_vars->mlx || init_img(_vars))
+	if (!_vars->mlx)
 		return (-1);
 	if (!_vars->mlx)
 		return (ft_putstr_fd("init of mlx faild", 2), -1);
 	if (parser(file, _vars))
-	{
-		mlx_destroy_image(_vars->mlx, _vars->imgs.wall);
-		mlx_destroy_window(_vars->mlx, _vars->win);
 		return (-3);
-	}
 	_vars->win = mlx_new_window(_vars->mlx, SCREENWIDTH, SCREENHEIGHT, "Test");
 	if (!_vars->mlx)
 		return (perror("init of mlx window faild"), -2);
