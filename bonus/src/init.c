@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ozahir <ozahir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:15:09 by tel-mouh          #+#    #+#             */
-/*   Updated: 2023/04/17 13:55:35 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2023/04/18 02:13:17 by ozahir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,18 @@ int	init(t_vars *_vars, char *file)
 {
 	ft_bzero(_vars, sizeof(t_vars));
 	_vars->mlx = mlx_init();
-	if (init_img(_vars))
+	if (!_vars->mlx || init_img(_vars))
 		return (-1);
 	if (!_vars->mlx)
 		return (ft_putstr_fd("init of mlx faild", 2), -1);
+	if (parser(file, _vars))
+	{
+		mlx_destroy_image(_vars->mlx, _vars->imgs.wall);
+		return (-3);
+	}
 	_vars->win = mlx_new_window(_vars->mlx, SCREENWIDTH, SCREENHEIGHT, "Test");
 	if (!_vars->mlx)
 		return (perror("init of mlx window faild"), -2);
-	if (parser(file, _vars))
-	{
-		mlx_destroy_window(_vars->mlx, _vars->win);
-		return (-3);
-	}
 	init_var_game(_vars);
 	return (0);
 }
